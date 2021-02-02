@@ -245,7 +245,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1479031351}
   - component: {fileID: 1479031350}
-  - component: {fileID: 1479031352}
   m_Layer: 0
   m_Name: TestPool
   m_TagString: Untagged
@@ -265,7 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a0baf9e7d2d7647840804f4f27f1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mHealth: {fileID: 1479031352}
 --- !u!4 &1479031351
 Transform:
   m_ObjectHideFlags: 0
@@ -280,19 +278,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1479031352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479031349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18f1a4bfa771ce41af723c59e298832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthOveride: 11
 --- !u!1 &1590600755
 GameObject:
   m_ObjectHideFlags: 0
