@@ -9,10 +9,8 @@ public class Ability : ScriptableObject
 {
    [SerializeField] protected string abilityName;
    [SerializeField] protected string description;
-     
-   [SerializeField] protected bool gcd;
-   [SerializeField] protected List <Pool> pools = new List<Pool>(0);
-   [SerializeField] protected List <float> costs = new List<float>(0);
+   [SerializeField] protected bool gcd = true;
+   protected bool runOnce = false;
 
 private void OnEnable() 
 {
@@ -48,6 +46,9 @@ private void OnEnable()
         }
         
     }
+
+
+
     #endregion
 
     public virtual bool Use() //Virtual to set up for use functions
@@ -57,6 +58,7 @@ private void OnEnable()
 
     public virtual bool Use(Entity user) //Virtual to set up for use functions
     {
+        Debug.Log("Ability is being called instead");
         return (false);
     }
 

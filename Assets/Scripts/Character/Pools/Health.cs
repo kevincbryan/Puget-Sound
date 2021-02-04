@@ -47,7 +47,7 @@ public class Health : Pool
 
         value += healing;
 
-        if (value <= maxValue) value = maxValue;
+        if (value >= maxValue) value = maxValue;
     }
 
 

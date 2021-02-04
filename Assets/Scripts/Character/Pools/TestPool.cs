@@ -6,10 +6,49 @@ public class TestPool : MonoBehaviour
 {
 
     private Charge energy;
+    public Player player;
+    public Revolver mRevolver;
+    public Defense mDefense;
+    public ClawFrenzy mClawFrenzy;
+    public HookKick mHookKick;
+    public BiteHeal mBiteHeal;
+    public DeathLaser mDeathLaser;
     
     // Start is called before the first frame update
     void Start()
     {
+
+        /*
+        player = new Player();
+        Debug.Log("I have " + player.charge.Value + " Charge.");
+        Debug.Log("I have " + player.bullets.Value + " Bullets left");
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log("I have " + player.bullets.Value + " Bullets left");
+        Debug.Log("I have " + player.charge.Value + " Charge.");
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log(mRevolver.Use(player));
+        Debug.Log("I have " + player.bullets.Value + " Bullets left");
+        Debug.Log("I have " + player.charge.Value + " Charge.");
+        Debug.Log(mDeathLaser.Ready(player));
+        player.health.Damage(5f);
+        Debug.Log("Player has " + player.health.Value + " Life");
+        Debug.Log(mDeathLaser.Use(player));
+        Debug.Log("Player has " + player.health.Value + " Life");
+        Debug.Log("I have " + player.charge.Value + " Charge.");
+        Debug.Log(mDeathLaser.Use(player));
+        Debug.Log(mDeathLaser.Use(player));
+        Debug.Log(mDeathLaser.Use(player));
+        Debug.Log(mDeathLaser.Use(player));
+        Debug.Log("I have " + player.charge.Value + " Charge.");
+
+    */
+
+
+        /*
         energy = new Charge();
       
         PlayerHealth hitPoints = new PlayerHealth(13f);
@@ -54,6 +93,7 @@ public class TestPool : MonoBehaviour
         //Debug.Log(bob.Relations.Count);
         //Debug.Log(bob.Relations[steve.Identity]);
 
+        */
 
 
 
