@@ -58,7 +58,7 @@ private void OnEnable()
 
     public virtual bool Use(Entity user) //Virtual to set up for use functions
     {
-        Debug.Log("Ability is being called instead");
+        //Debug.Log("Ability is being called instead");
         return (false);
     }
 
@@ -72,6 +72,16 @@ private void OnEnable()
         return (false);
     }
    
+   public virtual bool Use (PC pc)
+   {
+       return (false);
+   }
+
+
+    public virtual bool Ready(PC pc)
+    {
+        return (false);
+    }
 
 
 }

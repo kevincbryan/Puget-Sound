@@ -26,6 +26,14 @@ public class Pool
         }
     }
 
+    public float MaxValue
+    {
+        get
+        {
+            return maxValue;
+        }
+    }
+
 
     
 

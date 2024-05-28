@@ -93,6 +93,8 @@ public class PlayerController : MonoBehaviour
     {
         if (movable)
         {
+            //rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             deltaRotation = Quaternion.Euler(yRotation * turnSpeed * Time.fixedDeltaTime);
             rb.MoveRotation(rb.rotation * deltaRotation);
             //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);

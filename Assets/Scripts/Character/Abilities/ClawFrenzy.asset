@@ -18,3 +18,6 @@ MonoBehaviour:
   damage: 10
   repDamage: 5
   chargeCost: 2
+  range: 10
+  particle: {fileID: 2655030852211886690, guid: ee60bbe5163483549b37f56cd7e26a80,
+    type: 3}

@@ -18,3 +18,9 @@ MonoBehaviour:
   damage: 30
   repDamage: 5
   chargeCost: 5
+  radius: 5
+  range: 100
+  duration: 4
+  launchForce: 10
+  particle: {fileID: 1232416789036227061, guid: b8f2c7aaf8899b94c8cd4378e403d495,
+    type: 3}

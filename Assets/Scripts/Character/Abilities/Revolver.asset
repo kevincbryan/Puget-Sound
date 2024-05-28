@@ -15,8 +15,13 @@ MonoBehaviour:
   abilityName: Revolver
   description: Shoot your gun to charge!
   gcd: 0
-  pools: []
-  costs:
-  - 1
   damage: 5
   repDamage: 10
+  bulletCost: 1
+  chargeGain: 1
+  range: 50
+  particle: {fileID: 4262122062893719120, guid: 1e1f591b603252b4b820491841b58b2e,
+    type: 3}
+  impactBlood: {fileID: 2328798833203950868, guid: ae52f189cd7a6e9439c73e4c73ff453d,
+    type: 3}
+  bullet: {fileID: 3641833187774491513, guid: 52de6d56d0eb42c48ae2e46185b97e7c, type: 3}

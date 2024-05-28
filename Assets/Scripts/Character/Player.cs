@@ -13,7 +13,7 @@ public class Player : Entity
     {
         name = "Scarlet Maple";
         //faction = Faction.factions[0];
-        health = new Health();
+        health = new PlayerHealth();
         charge = new Charge();
         bullets = new Bullets();
 
@@ -23,7 +23,7 @@ public class Player : Entity
     {
         name = myName;
         //faction = Faction.factions[0];
-        health = new Health();
+        health = new PlayerHealth();
         charge = new Charge();
         bullets = new Bullets();
     }
@@ -32,7 +32,7 @@ public class Player : Entity
     {
         name = myName;
         //faction = Faction.factions[0];
-        health = new Health(myHealth);
+        health = new PlayerHealth(myHealth);
         charge = new Charge();
         bullets = new Bullets();
     }

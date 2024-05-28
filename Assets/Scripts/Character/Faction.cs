@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Faction
+
+[CreateAssetMenu(fileName = "Faction", menuName = "Factions")]
+[System.Serializable]
+public class Faction : ScriptableObject
 {
     public static List<Faction> factions = new List<Faction>();
-    protected string name;
-    protected List<int> relations = new List<int>();
-    protected int position;
+    //protected string name;
+    public int startingRep = 0;
+    [SerializeField] protected List<float> relations = new List<float>();
+    [SerializeField] protected int position;
+    protected bool runOnce = false;
 
     #region accessors
     public string Name
@@ -26,7 +31,7 @@ public class Faction
         }
     }
 
-    public List<int> Relations
+    public List<float> Relations
     {
         get
         {
@@ -44,6 +49,37 @@ public class Faction
     #endregion
 
     #region constructors
+
+    private void OnEnable() //Jury-riged constructor
+    {
+        if (!runOnce)
+        {
+            runOnce = true;
+            factions.Add(this);
+            position = factions.Count -1;
+
+            for (int i = 0; i < factions.Count; i++) //Make relation values for all previously created factions
+            {
+                relations.Add(startingRep);
+            }
+
+            if (position != 0) //if not the first entry, add relations to all existing factions
+            {
+                for (int i = 0; i < factions.Count - 1; i++)
+                {
+                    factions[i].AddRelation(startingRep);
+                }
+            }
+
+            relations[position] = 100; //Set own relations to perfect
+
+
+        }
+    }
+
+
+
+/*
     public Faction ()
     {
         name = "Generic";
@@ -56,7 +92,7 @@ public class Faction
             relations.Add(0);
         }
 
-
+        
         if (position != 0) //if not the first entry, add relations to all existing factions
         {
             for (int i = 0; i < factions.Count - 1; i++)
@@ -114,17 +150,17 @@ public class Faction
         {
             for (int i = 0; i < factions.Count - 1; i++)
             {
-                factions[i].AddRelation(0);
+                factions[i].AddRelation(affection);
             }
         }
 
         relations[position] = 100;//Set own relations to perfect
     }
-
+*/
     #endregion
 
 
-    public void AddRelation (int reputation)
+    public void AddRelation (float reputation)
     {
         //Debug.Log ("Add relation has been called");
         if (reputation > 100) reputation = 100;
@@ -132,32 +168,33 @@ public class Faction
         relations.Add(reputation);
     }
 
-    public bool Hate (int index, int hate)
+    public bool Hate (int index, float hate)
     {
         if (index +1 <= relations.Count)
         {
             if (index != position)
             {
-                int tempRep = relations[index];
+                float tempRep = relations[index];
                 tempRep -= hate;
 
                 if (tempRep > 100) tempRep = 100;
                 if (tempRep < -100) tempRep = -100;
 
                 relations[index] = tempRep;
+                //Debug.Log ("Faction " + index + "Is now at " + relations[index] + " rep");
             }
             return (true);
         }
         return (false);
     }
 
-    public bool Love(int index, int love)
+    public bool Love(int index, float love)
     {
         if (index + 1 <= relations.Count)
         {
             if (index != position)
             {
-                int tempRep = relations[index];
+                float tempRep = relations[index];
                 tempRep += love;
 
                 if (tempRep > 100) tempRep = 100;
@@ -171,7 +208,7 @@ public class Faction
     }
 
 
-    public bool SetRep(int index, int rep)
+    public bool SetRep(int index, float rep)
     {
         if (index + 1 <= relations.Count)
         {

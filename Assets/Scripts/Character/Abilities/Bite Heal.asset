@@ -19,3 +19,6 @@ MonoBehaviour:
   repDamage: 5
   healing: 10
   chargeCost: 4
+  range: 5
+  particle: {fileID: 8785120633864915079, guid: 4ca10f4eea9818644a29090831cb5b5a,
+    type: 3}
